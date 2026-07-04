@@ -1,20 +1,20 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
+
+    // Conecta Firebase con este módulo Android.
+    id("com.google.gms.google-services")
+    alias(libs.plugins.kotlin.android)
 }
 
 android {
     namespace = "com.example.pc02tejada23101335"
-    compileSdk {
-        version = release(36) {
-            minorApiLevel = 1
-        }
-    }
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.pc02tejada23101335"
-        minSdk = 23
-        targetSdk = 36
+        minSdk = 24
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -37,6 +37,9 @@ android {
     buildFeatures {
         compose = true
     }
+    kotlinOptions {
+        jvmTarget = "11"
+    }
 }
 
 dependencies {
@@ -55,4 +58,23 @@ dependencies {
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
+
+    // Firebase BoM: maneja versiones compatibles entre librerías Firebase.
+    implementation(platform("com.google.firebase:firebase-bom:33.7.0"))
+
+    // Firebase Authentication para login con correo y contraseña.
+    implementation("com.google.firebase:firebase-auth")
+
+    // Firestore para guardar monedas, tasas e historial.
+    implementation("com.google.firebase:firebase-firestore")
+
+    // Permite usar .await() con Firebase dentro de corrutinas.
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.10.2")
+
+    // Retrofit para consumir la API de ExchangeRate.
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+
+    // ViewModel para Compose.
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.7")
 }

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "420712029665",
+    "project_id": "pc02tejada23101335",
+    "storage_bucket": "pc02tejada23101335.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:420712029665:android:6b1f01eeeb4243998c46a0",
+        "android_client_info": {
+          "package_name": "com.example.pc02tejada23101335"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "420712029665-bnqmig26utr2q62huatjh0r2m86mt56c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6nMa3ELuMmqCB3hzInIe-YxZNY_bcHOQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "420712029665-bnqmig26utr2q62huatjh0r2m86mt56c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
